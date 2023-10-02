@@ -1,14 +1,22 @@
 "use client";
 
 import React from "react";
-import { Button } from "../ui/button";
+import { Button, buttonVariants } from "../ui/button";
 import { signIn, signOut } from "next-auth/react";
+import Link from "next/link";
+import { cn } from "@/lib/utils";
 
 export const LoginButton = () => {
   return (
-    <Button onClick={() => signIn("google")} className="px-8 font-bold">
+    <Link
+      href="/auth/login"
+      className={cn(buttonVariants({ variant: "default" }), "px-8 font-bold")}
+    >
       Login
-    </Button>
+    </Link>
+    // <Button onClick={() => signIn("google")} className="px-8 font-bold">
+    //   Login
+    // </Button>
   );
 };
 

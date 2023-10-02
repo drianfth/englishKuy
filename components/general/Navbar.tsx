@@ -7,7 +7,6 @@ import { User } from "next-auth";
 
 const Navbar = async () => {
   const session: User = await getUserSession();
-  // const navItems = [{ label: "4000 Englisg", childs: [{}] }];
 
   return (
     <nav className="h-16 flex items-center z-50 border-b  fixed top-0 right-0 left-0  backdrop-blur-sm">

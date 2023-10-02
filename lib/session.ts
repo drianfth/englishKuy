@@ -2,6 +2,7 @@ import { User, getServerSession } from "next-auth";
 
 export const session = async ({ session, token }: any) => {
   session.user.id = token.id;
+  session.user.role = token.role;
   return session;
 };
 

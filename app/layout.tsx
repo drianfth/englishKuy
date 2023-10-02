@@ -2,7 +2,8 @@ import Providers from "@/components/general/provider";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
-
+import Navbar from "@/components/general/Navbar";
+import { Toaster } from "react-hot-toast";
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
@@ -24,7 +25,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${poppins.className} min-h-screen`}>
-        <Providers>{children}</Providers>
+        <Providers>
+          {children}
+          <Toaster />
+        </Providers>
       </body>
     </html>
   );
